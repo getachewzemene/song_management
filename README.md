@@ -10,29 +10,51 @@ Search for songs by title, artist, or genre
 # Technologies Used
 The following technologies were used in the development of this project:
 
-## Node.js
-## Express.js
-## MongoDB
-## React.js
-## Typescript  
-## Redux
+Node.js
+Express.js
+MongoDB
+React.js
+Typescript  
+Redux
 
 # Installation
  clone the project
- ## git clone https://github.com/getachewzemene/song_management.git
+
+   ```bash
+   git clone https://github.com/getachewzemene/song_management.git
+   ```
  navigate to root project
- ## cd song_management
+
+  ```bash 
+  cd song_management
+  ```
  navigate to back-end 
- ## cd backend
+
+   ```bash
+   cd backend
+   ```
  install dependencies
- ## npm install
+
+   ```bash
+    npm install
+    ```
  navigate back to root project and navigate to front-end
- ## cd front-end
+
+    ```bash 
+    cd front-end
+    ```
  install dependencies
- ## npm install
+
+   ```bash
+   npm install
+   ```
 
 # usage
 back-end
-## node app.js
+  ```bash
+  node app.js
+  ```
 front-end
-## npm start
+  ```bash
+  npm start
+  ```
