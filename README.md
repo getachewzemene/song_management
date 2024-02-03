@@ -27,29 +27,13 @@ Redux
 
   ```bash 
   cd song_management
+
   ```
- navigate to back-end 
-
-   ```bash
-   cd backend
-   ```
- install dependencies
-
-   ```bash
-    npm install
-    ```
- navigate back to root project and navigate to front-end
-
-    ```bash 
-    cd front-end
-    ```
- install dependencies
-
-   ```bash
-   npm install
-   ```
-
-# usage
+ navigate to both back-end and front-end and install dependencies for both projects
+ ```bash 
+ npm install 
+ ```
+# Usage
 back-end
   ```bash
   node app.js
