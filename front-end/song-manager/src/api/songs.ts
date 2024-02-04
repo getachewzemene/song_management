@@ -1,6 +1,6 @@
 // api/songs.ts
 import axios from 'axios';
-
+import { Song } from '../common/types';
 // Fetch songs from the server
 export const fetchSongsAPI = async () => {
   try {
@@ -13,7 +13,7 @@ export const fetchSongsAPI = async () => {
 };
 
 // Add a new song to the server
-export const addSongAPI = async (songData: any) => {
+export const addSongAPI = async (songData: Song) => {
   try {
     const response = await axios.post('/api/songs', songData);
     return response.data;
@@ -35,7 +35,7 @@ export const updateSongAPI = async (context: unknown, songId: string, updatedSon
 };
 
 // Delete a song from the server
-export const deleteSongAPI = async (songId: any) => {
+export const deleteSongAPI = async (songId: string) => {
   try {
     const response = await axios.delete(`/api/songs/${songId}`);
     return response.data;
