@@ -1,8 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { call, put, takeLatest } from 'redux-saga/effects';
 import { fetchSongsAPI, addSongAPI, updateSongAPI, deleteSongAPI } from '../../api/songs';
-import { Song } from '../../common/types';
-import { Draft } from 'immer';
+import { Song } from '../../common/types'
 
 interface SongsState {
   songs: Song[];
