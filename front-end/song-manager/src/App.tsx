@@ -1,26 +1,42 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from './store/store';
+import { fetchSongsStart, addSongSuccess, updateSongSuccess, deleteSongSuccess } from './store/songs/songSlice';
+import SongList from './components/SongList';
+import SongForm from './components/SongForm';
+import Statistics from './components/Statistics';
+import { Song } from './common/types';
+const App=  () => {
+  const dispatch = useDispatch();
+  const songs = useSelector((state: RootState) => state.songs.songs);
+
+  useEffect(() => {
+    dispatch(fetchSongsStart());
+  }, [dispatch]);
+
+  const handleAddSong = (songData: Song) => {
+    dispatch(addSongSuccess(songData));
+  };
+
+  const handleUpdateSong = (songData: Song) => {
+    dispatch(updateSongSuccess(songData));
+  };
+
+  const handleDeleteSong = (songId: string) => {
+    dispatch(deleteSongSuccess(songId));
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Song Management App</h1>
+      <SongForm onSubmit={handleAddSong} />
+      <SongList songs={songs} onUpdate={handleUpdateSong} onDelete={handleDeleteSong} />
+      <Statistics songs={songs} />
+      <input type="text" placeholder="Filter by genre" onChange={(e) => {
+      }} />
     </div>
   );
-}
+};
 
 export default App;
